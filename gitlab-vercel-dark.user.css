@@ -1,0 +1,629 @@
+/* ==UserStyle==
+@name           GitLab – Vercel Dark
+@namespace      github.com/maxihafer/userstyles
+@version        1.2.0
+@description    GitLab in Zed's Vercel Dark colors. Requires GitLab's Dark color mode.
+@author         maxihafer
+@license        MIT
+@updateURL      https://raw.githubusercontent.com/maxihafer/userstyles/main/gitlab-vercel-dark.user.css
+==/UserStyle== */
+
+@-moz-document domain("gitlab.com"), regexp("https?://gitlab\\..*") {
+  :root.gl-dark,
+  .gl-dark {
+    --vd-bg: #0a0a0a;
+    --vd-surface: #000000;
+    --vd-element: #1f1f1f;
+    --vd-hover: #1a1a1a;
+    --vd-inactive: #111111;
+    --vd-border: #2e2e2e;
+    --vd-border-strong: #454545;
+    --vd-text: #ededed;
+    --vd-muted: #a0a0a0;
+    --vd-subtle: #878787;
+    --vd-faint: #7d7d7d;
+    --vd-blue: #52a8ff;
+    --vd-green: #00ac3a;
+    --vd-red: #f32e40;
+    --vd-yellow: #ffae00;
+    --vd-purple: #c472fb;
+    --vd-magenta: #9440d5;
+    --vd-pink: #f12b82;
+    --vd-cyan: #00aa95;
+
+    --gl-color-neutral-0: #ffffff;
+    --gl-color-neutral-10: #fafafa;
+    --gl-color-neutral-50: #ededed;
+    --gl-color-neutral-100: #d4d4d4;
+    --gl-color-neutral-200: #a0a0a0;
+    --gl-color-neutral-300: #878787;
+    --gl-color-neutral-400: #7d7d7d;
+    --gl-color-neutral-500: #676767;
+    --gl-color-neutral-600: #454545;
+    --gl-color-neutral-700: #2e2e2e;
+    --gl-color-neutral-800: #1f1f1f;
+    --gl-color-neutral-900: #1a1a1a;
+    --gl-color-neutral-950: #0a0a0a;
+    --gl-color-neutral-1000: #000000;
+
+    --gl-color-green-50: #e5fbea;
+    --gl-color-green-100: #e5fbea;
+    --gl-color-green-200: #62c073;
+    --gl-color-green-300: #00ac3a;
+    --gl-color-green-400: #398e4a;
+    --gl-color-green-500: #1a9338;
+    --gl-color-green-600: #126426;
+    --gl-color-green-700: #0c451b;
+    --gl-color-green-800: #12361b;
+    --gl-color-green-900: #0f2e18;
+    --gl-color-green-950: #0b2212;
+
+    --gl-color-red-50: #feecee;
+    --gl-color-red-100: #feecee;
+    --gl-color-red-200: #ff6166;
+    --gl-color-red-300: #f32e40;
+    --gl-color-red-400: #d93036;
+    --gl-color-red-500: #e5484d;
+    --gl-color-red-600: #832126;
+    --gl-color-red-700: #671e21;
+    --gl-color-red-800: #561a1e;
+    --gl-color-red-900: #3c1618;
+    --gl-color-red-950: #2a1314;
+
+    --gl-color-orange-50: #fef3dc;
+    --gl-color-orange-100: #fef3dc;
+    --gl-color-orange-200: #f2a20d;
+    --gl-color-orange-300: #ffae00;
+    --gl-color-orange-400: #ff990a;
+    --gl-color-orange-500: #e79d13;
+    --gl-color-orange-600: #6b4105;
+    --gl-color-orange-700: #573300;
+    --gl-color-orange-800: #4c2a00;
+    --gl-color-orange-900: #331b00;
+    --gl-color-orange-950: #291800;
+
+    --gl-color-blue-50: #ebf6ff;
+    --gl-color-blue-100: #ebf6ff;
+    --gl-color-blue-200: #52a8ff;
+    --gl-color-blue-300: #52a8ff;
+    --gl-color-blue-400: #0062d1;
+    --gl-color-blue-500: #0090ff;
+    --gl-color-blue-600: #0a4380;
+    --gl-color-blue-700: #0d3868;
+    --gl-color-blue-800: #0f2f57;
+    --gl-color-blue-900: #10233d;
+    --gl-color-blue-950: #0f1c2e;
+
+    --gl-color-purple-50: #f8edfc;
+    --gl-color-purple-100: #f8edfc;
+    --gl-color-purple-200: #bf7af0;
+    --gl-color-purple-300: #8e4ec6;
+    --gl-color-purple-400: #763da9;
+    --gl-color-purple-500: #8e4ec6;
+    --gl-color-purple-600: #5f2e85;
+    --gl-color-purple-700: #4f2768;
+    --gl-color-purple-800: #422154;
+    --gl-color-purple-900: #2e1938;
+    --gl-color-purple-950: #231528;
+
+    --gray-10: #0a0a0a;
+    --gray-50: #1a1a1a;
+    --gray-100: #1f1f1f;
+    --gray-200: #2e2e2e;
+    --gray-300: #454545;
+    --gray-400: #676767;
+    --gray-500: #7d7d7d;
+    --gray-600: #878787;
+    --gray-700: #a0a0a0;
+    --gray-800: #d4d4d4;
+    --gray-900: #ededed;
+    --gray-950: #fafafa;
+    --white: #0a0a0a;
+
+    --gl-background-color-default: var(--vd-bg);
+    --gl-background-color-subtle: var(--vd-surface);
+    --gl-background-color-strong: var(--vd-element);
+    --gl-background-color-section: var(--vd-surface);
+    --gl-background-color-overlap: var(--vd-surface);
+    --gl-background-color-disabled: var(--vd-hover);
+    --gl-background-color-overlay: rgba(0, 0, 0, 0.7);
+    --gl-application-chrome-background-color: var(--vd-surface);
+
+    --gl-text-color-default: var(--vd-text);
+    --gl-text-color-strong: #ffffff;
+    --gl-text-color-heading: var(--vd-text);
+    --gl-text-color-subtle: var(--vd-muted);
+    --gl-text-color-disabled: var(--vd-faint);
+    --gl-text-color-link: var(--vd-text);
+    --gl-text-color-success: var(--vd-green);
+    --gl-text-color-danger: var(--vd-red);
+    --gl-text-color-warning: var(--vd-yellow);
+
+    --gl-border-color-default: var(--vd-border);
+    --gl-border-color-subtle: var(--vd-border);
+    --gl-border-color-section: var(--vd-border);
+    --gl-border-color-strong: var(--vd-border-strong);
+
+    --gl-control-background-color-default: var(--vd-surface);
+    --gl-control-border-color-default: var(--vd-border);
+    --gl-control-border-color-hover: var(--vd-border-strong);
+    --gl-control-border-color-focus: var(--vd-blue);
+    --gl-control-placeholder-color: var(--vd-faint);
+
+    --gl-action-neutral-background-color-default: transparent;
+    --gl-action-neutral-background-color-hover: var(--vd-hover);
+    --gl-action-neutral-background-color-active: var(--vd-element);
+    --gl-action-neutral-border-color-default: var(--vd-border);
+    --gl-action-neutral-foreground-color-default: var(--vd-text);
+    --gl-action-selected-background-color-default: var(--vd-element);
+
+    --gl-button-default-primary-background-color-default: var(--vd-element);
+    --gl-button-default-primary-background-color-hover: #292929;
+    --gl-button-default-primary-background-color-active: #2e2e2e;
+    --gl-button-default-primary-border-color-default: var(--vd-border);
+    --gl-button-default-primary-border-color-hover: var(--vd-border-strong);
+    --gl-button-default-primary-foreground-color-default: var(--vd-text);
+    --gl-button-confirm-primary-background-color-default: var(--vd-text);
+    --gl-button-confirm-primary-background-color-hover: #ffffff;
+    --gl-button-confirm-primary-background-color-active: #d4d4d4;
+    --gl-button-confirm-primary-border-color-default: var(--vd-text);
+    --gl-button-confirm-primary-border-color-hover: #ffffff;
+    --gl-button-confirm-primary-foreground-color-default: #000000;
+    --gl-button-confirm-primary-foreground-color-hover: #000000;
+    --gl-button-danger-primary-background-color-default: var(--vd-red);
+    --gl-button-danger-primary-border-color-default: var(--vd-red);
+
+    --gl-feedback-info-background-color: rgba(82, 168, 255, 0.2);
+    --gl-feedback-info-text-color: var(--vd-blue);
+    --gl-feedback-success-background-color: rgba(0, 172, 58, 0.2);
+    --gl-feedback-success-text-color: var(--vd-green);
+    --gl-feedback-warning-background-color: rgba(255, 174, 0, 0.2);
+    --gl-feedback-warning-text-color: var(--vd-yellow);
+    --gl-feedback-danger-background-color: rgba(243, 46, 64, 0.2);
+    --gl-feedback-danger-text-color: var(--vd-red);
+    --gl-feedback-neutral-background-color: var(--vd-element);
+    --gl-feedback-neutral-text-color: var(--vd-muted);
+
+    --gl-focus-ring-outer-color: var(--vd-blue);
+    --gl-focus-ring-inner-color: var(--vd-bg);
+
+    --super-sidebar-bg: var(--vd-surface);
+    --super-sidebar-user-bar-bg: var(--vd-surface);
+    --super-sidebar-primary: var(--vd-blue);
+    --super-sidebar-nav-item-hover-bg: var(--vd-hover);
+    --super-sidebar-nav-item-active-bg: var(--vd-element);
+    --super-sidebar-nav-item-current-bg: var(--vd-element);
+
+    --gl-highlight-target-background-color: var(--vd-hover);
+    --gl-highlight-target-border-color: var(--vd-border-strong);
+    --gl-highlight-match-background-color: rgba(255, 174, 0, 0.35);
+    --gl-highlight-match-text-color: var(--vd-text);
+    --gl-table-row-background-color-hover: var(--vd-hover);
+
+    --gl-nav-item-background-color-hover: var(--vd-hover);
+    --gl-nav-item-background-color-active: var(--vd-element);
+    --gl-nav-item-selected-background-color-default: var(--vd-element);
+    --gl-nav-item-foreground-color-default: var(--vd-muted);
+    --gl-nav-item-foreground-color-hover: var(--vd-text);
+    --gl-nav-item-selected-indicator-color: var(--vd-text);
+
+    --gl-dropdown-option-background-color-selected-default: var(--vd-element);
+    --gl-dropdown-option-background-color-selected-hover: #292929;
+    --gl-dropdown-option-background-color-selected-active: var(--vd-hover);
+    --gl-action-neutral-background-color-focus: var(--vd-hover);
+    --gl-control-background-color-selected-default: var(--vd-text);
+    --gl-control-background-color-selected-hover: #ffffff;
+    --gl-control-indicator-color-selected: #000000;
+
+    color-scheme: dark;
+  }
+
+  .gl-dark body,
+  .gl-dark .content-wrapper,
+  .gl-dark .page-with-super-sidebar {
+    background-color: var(--vd-bg) !important;
+    color: var(--vd-text);
+  }
+
+  .gl-dark .super-sidebar,
+  .gl-dark .super-sidebar .user-bar,
+  .gl-dark .super-sidebar-overlay,
+  .gl-dark .top-bar-fixed,
+  .gl-dark header.navbar-gitlab {
+    background-color: var(--vd-surface) !important;
+    border-color: var(--vd-border) !important;
+  }
+
+  .gl-dark .super-sidebar .gl-new-dropdown-item:hover,
+  .gl-dark .super-sidebar-nav-item:hover {
+    background-color: var(--vd-hover) !important;
+  }
+
+  .gl-dark .super-sidebar-nav-item.super-sidebar-nav-item-current,
+  .gl-dark .super-sidebar-nav-item[aria-current="page"] {
+    background-color: var(--vd-element) !important;
+  }
+
+  .gl-dark .super-sidebar .active-indicator {
+    background-color: var(--vd-text) !important;
+  }
+
+  .gl-dark .gl-card,
+  .gl-dark .card,
+  .gl-dark .file-holder,
+  .gl-dark .gl-new-dropdown-panel,
+  .gl-dark .dropdown-menu,
+  .gl-dark .popover,
+  .gl-dark .modal-content,
+  .gl-dark .gl-drawer,
+  .gl-dark .timeline-entry .timeline-discussion-body,
+  .gl-dark .note-wrapper {
+    background-color: var(--vd-surface) !important;
+    border-color: var(--vd-border) !important;
+  }
+
+  .gl-dark .gl-card-header,
+  .gl-dark .card-header,
+  .gl-dark .file-title,
+  .gl-dark .file-title-flex-parent,
+  .gl-dark .js-file-title,
+  .gl-dark .nav-controls,
+  .gl-dark .top-area,
+  .gl-dark .table thead th,
+  .gl-dark .gl-table thead th {
+    background-color: var(--vd-inactive) !important;
+    border-color: var(--vd-border) !important;
+  }
+
+  .gl-dark .tree-table tr:hover,
+  .gl-dark .gl-table tbody tr:hover,
+  .gl-dark .issuable-list > li:hover,
+  .gl-dark .gl-new-dropdown-item:hover .gl-new-dropdown-item-content,
+  .gl-dark .gl-new-dropdown-item:focus .gl-new-dropdown-item-content {
+    background-color: var(--vd-hover) !important;
+  }
+
+  .gl-dark .gl-form-input,
+  .gl-dark .form-control,
+  .gl-dark .gl-form-textarea,
+  .gl-dark .gl-form-select,
+  .gl-dark .gl-search-box-by-type-input,
+  .gl-dark .md-area,
+  .gl-dark textarea,
+  .gl-dark input[type="text"],
+  .gl-dark input[type="search"] {
+    background-color: var(--vd-surface) !important;
+    border-color: var(--vd-border) !important;
+    color: var(--vd-text) !important;
+  }
+
+  .gl-dark .gl-form-input:focus,
+  .gl-dark .form-control:focus,
+  .gl-dark .md-area.is-focused {
+    border-color: var(--vd-blue) !important;
+    box-shadow: 0 0 0 1px var(--vd-blue) !important;
+  }
+
+  .gl-dark ::placeholder {
+    color: var(--vd-faint) !important;
+  }
+
+  .gl-dark .nav-tabs .nav-link.active,
+  .gl-dark .gl-tabs-nav .gl-tab-nav-item-active {
+    color: var(--vd-text) !important;
+    box-shadow: inset 0 -2px 0 0 var(--vd-text) !important;
+  }
+
+  .gl-dark a:not(.btn):not(.gl-button):not(.gl-label-link):not(.super-sidebar-nav-item) {
+    color: var(--vd-text);
+  }
+
+  .gl-dark a:not(.btn):not(.gl-button):not(.gl-label-link):not(.super-sidebar-nav-item):hover,
+  .gl-dark .md a,
+  .gl-dark .note-text a {
+    color: var(--vd-blue);
+  }
+
+  .gl-dark ::selection {
+    background-color: rgba(82, 168, 255, 0.2);
+  }
+
+  .gl-dark * {
+    scrollbar-color: rgba(160, 160, 160, 0.4) transparent;
+  }
+
+  .gl-dark .badge-success,
+  .gl-dark .gl-badge.badge-success {
+    background-color: rgba(0, 172, 58, 0.2) !important;
+    color: var(--vd-green) !important;
+  }
+
+  .gl-dark .badge-danger,
+  .gl-dark .gl-badge.badge-danger {
+    background-color: rgba(243, 46, 64, 0.2) !important;
+    color: var(--vd-red) !important;
+  }
+
+  .gl-dark .badge-warning,
+  .gl-dark .gl-badge.badge-warning {
+    background-color: rgba(255, 174, 0, 0.2) !important;
+    color: var(--vd-yellow) !important;
+  }
+
+  .gl-dark .badge-info,
+  .gl-dark .gl-badge.badge-info,
+  .gl-dark .badge-tier {
+    background-color: rgba(82, 168, 255, 0.2) !important;
+    color: var(--vd-blue) !important;
+  }
+
+  .gl-dark .badge-neutral,
+  .gl-dark .gl-badge.badge-neutral,
+  .gl-dark .badge-muted {
+    background-color: var(--vd-element) !important;
+    color: var(--vd-muted) !important;
+  }
+
+  .gl-dark .ci-status-icon-success,
+  .gl-dark .ci-status-icon-passed { color: var(--gl-color-green-300) !important; }
+  .gl-dark .ci-status-icon-failed { color: var(--gl-color-red-300) !important; }
+  .gl-dark .ci-status-icon-running { color: var(--gl-color-blue-300) !important; }
+  .gl-dark .ci-status-icon-pending,
+  .gl-dark .ci-status-icon-warning { color: var(--gl-color-orange-300) !important; }
+
+  .gl-dark,
+  .gl-dark .code,
+  .gl-dark .code[class],
+  .gl-dark .code-syntax-highlight-theme {
+    --default-diff-color-addition: #00ac3a !important;
+    --default-diff-color-deletion: #f32e40 !important;
+    --diff-addition-color: rgba(0, 172, 58, 0.12) !important;
+    --diff-deletion-color: rgba(243, 46, 64, 0.12) !important;
+    --diff-expansion-background-color: var(--vd-element) !important;
+
+    --code-background: var(--vd-bg) !important;
+    --code-text-color: var(--vd-text) !important;
+    --code-empty-background: var(--vd-surface) !important;
+    --code-border-color: var(--vd-border) !important;
+    --code-changed-border-color: rgba(255, 255, 255, 0.08) !important;
+    --code-line-number-background-color: var(--vd-bg) !important;
+    --code-line-number-color: #878787 !important;
+    --code-line-number-hover-background-color: var(--vd-hover) !important;
+    --code-line-number-hover-border-color: var(--vd-border-strong) !important;
+    --code-line-number-hover-color: var(--vd-text) !important;
+
+    --code-old-diff-background-color: rgba(243, 46, 64, 0.12) !important;
+    --code-old-diff-line-number-background-color: rgba(243, 46, 64, 0.2) !important;
+    --code-old-diff-line-number-color: #ff6166 !important;
+    --code-old-diff-sign-color: #f32e40 !important;
+    --code-old-diff-border-color: rgba(243, 46, 64, 0.2) !important;
+    --code-old-diff-color: #ff6166 !important;
+    --code-old-inline-diff-background-color: rgba(243, 46, 64, 0.35) !important;
+
+    --code-new-diff-background-color: rgba(0, 172, 58, 0.12) !important;
+    --code-new-diff-line-number-background-color: rgba(0, 172, 58, 0.2) !important;
+    --code-new-diff-line-number-color: #62c073 !important;
+    --code-new-diff-sign-color: #00ac3a !important;
+    --code-new-diff-border-color: rgba(0, 172, 58, 0.2) !important;
+    --code-new-diff-color: #62c073 !important;
+    --code-new-inline-diff-background-color: rgba(0, 172, 58, 0.35) !important;
+
+    --code-meta-diff-background-color: var(--vd-inactive) !important;
+    --code-meta-diff-color: var(--vd-muted) !important;
+    --code-diff-hunk-header-background-color: var(--vd-inactive) !important;
+    --code-diff-hunk-header-color: var(--vd-muted) !important;
+    --code-diff-expand-button-background-color: var(--vd-element) !important;
+    --code-diff-expand-button-color: var(--vd-muted) !important;
+    --code-diff-expand-button-hover-background-color: #292929 !important;
+    --code-diff-expand-button-hover-color: var(--vd-text) !important;
+    --code-highlighted-line-background-color: rgba(82, 168, 255, 0.2) !important;
+    --code-highlighted-line-border-color: var(--vd-blue) !important;
+
+    --color-hljs-comment: #a1a1a1 !important;
+    --color-hljs-keyword: #f12b82 !important;
+    --color-hljs-operator: #f12b82 !important;
+    --color-hljs-meta: #f12b82 !important;
+    --color-hljs-selector-tag: #f12b82 !important;
+    --color-hljs-string: #00ac3a !important;
+    --color-hljs-regexp: #00ac3a !important;
+    --color-hljs-symbol: #00ac3a !important;
+    --color-hljs-subst: #00ac3a !important;
+    --color-hljs-tag: #00ac3a !important;
+    --color-hljs-selector-attr: #00ac3a !important;
+    --color-hljs-type: #c472fb !important;
+    --color-hljs-class: #c472fb !important;
+    --color-hljs-function: #c472fb !important;
+    --color-hljs-attr: #c472fb !important;
+    --color-hljs-builtin: #c472fb !important;
+    --color-hljs-selector-class: #c472fb !important;
+    --color-hljs-selector-pseudo: #c472fb !important;
+    --color-hljs-number: #52a8ff !important;
+    --color-hljs-literal: #52a8ff !important;
+    --color-hljs-constant: #52a8ff !important;
+    --color-hljs-variable: #52a8ff !important;
+    --color-hljs-link: #52a8ff !important;
+    --color-hljs-selector-id: #52a8ff !important;
+    --color-hljs-title: #ededed !important;
+    --color-hljs-params: #ededed !important;
+    --color-hljs-language: #ededed !important;
+    --color-hljs-punctuation: #ededed !important;
+    --color-hljs-selector-doctag: #a1a1a1 !important;
+  }
+
+  .gl-dark .md code,
+  .gl-dark code:not(pre code) {
+    background-color: var(--vd-element) !important;
+    color: var(--vd-text) !important;
+  }
+
+  .gl-dark .md pre,
+  .gl-dark pre.code,
+  .gl-dark .code,
+  .gl-dark .highlight,
+  .gl-dark .blob-viewer,
+  .gl-dark .blob-content,
+  .gl-dark .file-content,
+  .gl-dark .diff-file .diff-content,
+  .gl-dark .line-numbers,
+  .gl-dark .diff-line-num,
+  .gl-dark .hljs {
+    background-color: var(--vd-bg) !important;
+    color: var(--vd-text) !important;
+    border-color: var(--vd-border) !important;
+  }
+
+  .gl-dark .line-numbers a,
+  .gl-dark .file-line-num,
+  .gl-dark .diff-line-num a,
+  .gl-dark .diff-line-num {
+    color: #878787 !important;
+  }
+
+  .gl-dark .line_holder:hover .diff-line-num,
+  .gl-dark .file-line-num:hover,
+  .gl-dark .hll,
+  .gl-dark .line.hll {
+    background-color: var(--vd-hover) !important;
+    color: var(--vd-text) !important;
+  }
+
+  .gl-dark .code .line_holder .line_content.new,
+  .gl-dark .line_holder.new .line_content,
+  .gl-dark .diff-td.line_content.new,
+  .gl-dark .line_content.new {
+    background-color: rgba(0, 172, 58, 0.12) !important;
+  }
+
+  .gl-dark .line_holder .diff-line-num.new,
+  .gl-dark .line_holder.new .diff-line-num,
+  .gl-dark .diff-td.diff-line-num.new,
+  .gl-dark .line_holder .line-coverage.new,
+  .gl-dark .line_holder .line-codequality.new {
+    background-color: rgba(0, 172, 58, 0.2) !important;
+  }
+
+  .gl-dark .code .line_holder .line_content.old,
+  .gl-dark .line_holder.old .line_content,
+  .gl-dark .diff-td.line_content.old,
+  .gl-dark .line_content.old {
+    background-color: rgba(243, 46, 64, 0.12) !important;
+  }
+
+  .gl-dark .line_holder .diff-line-num.old,
+  .gl-dark .line_holder.old .diff-line-num,
+  .gl-dark .diff-td.diff-line-num.old,
+  .gl-dark .line_holder .line-coverage.old,
+  .gl-dark .line_holder .line-codequality.old {
+    background-color: rgba(243, 46, 64, 0.2) !important;
+  }
+
+  .gl-dark .line_content .idiff.addition,
+  .gl-dark .line_content.new span.idiff {
+    background-color: rgba(0, 172, 58, 0.35) !important;
+  }
+
+  .gl-dark .line_content .idiff.deletion,
+  .gl-dark .line_content.old span.idiff {
+    background-color: rgba(243, 46, 64, 0.35) !important;
+  }
+
+  .gl-dark .line_holder.match .line_content,
+  .gl-dark .line_holder.match .diff-line-num,
+  .gl-dark .diff-grid-row .line_content.match {
+    background-color: var(--vd-inactive) !important;
+    color: var(--vd-muted) !important;
+  }
+
+  .gl-dark .code .c, .gl-dark .code .ch, .gl-dark .code .cm, .gl-dark .code .cpf,
+  .gl-dark .code .c1, .gl-dark .code .cs, .gl-dark .code .cd,
+  .gl-dark .highlight .c, .gl-dark .highlight .c1, .gl-dark .highlight .cm,
+  .gl-dark .highlight .cs, .gl-dark .highlight .cd,
+  .gl-dark .hljs-comment, .gl-dark .hljs-quote {
+    color: #a1a1a1 !important;
+    font-style: normal !important;
+  }
+
+  .gl-dark .code .k, .gl-dark .code .kc, .gl-dark .code .kd, .gl-dark .code .kn,
+  .gl-dark .code .kp, .gl-dark .code .kr, .gl-dark .code .kv, .gl-dark .code .o,
+  .gl-dark .code .ow, .gl-dark .code .cp,
+  .gl-dark .highlight .k, .gl-dark .highlight .kd, .gl-dark .highlight .kn,
+  .gl-dark .highlight .kr, .gl-dark .highlight .o, .gl-dark .highlight .ow,
+  .gl-dark .hljs-keyword, .gl-dark .hljs-operator, .gl-dark .hljs-meta,
+  .gl-dark .hljs-selector-tag {
+    color: #f12b82 !important;
+    font-weight: normal !important;
+  }
+
+  .gl-dark .code .s, .gl-dark .code .s1, .gl-dark .code .s2, .gl-dark .code .sa,
+  .gl-dark .code .sb, .gl-dark .code .sc, .gl-dark .code .sd, .gl-dark .code .se,
+  .gl-dark .code .sh, .gl-dark .code .si, .gl-dark .code .sr, .gl-dark .code .ss,
+  .gl-dark .code .sx, .gl-dark .code .dl, .gl-dark .code .nt,
+  .gl-dark .highlight .s, .gl-dark .highlight .s1, .gl-dark .highlight .s2,
+  .gl-dark .highlight .sr, .gl-dark .highlight .nt,
+  .gl-dark .hljs-string, .gl-dark .hljs-regexp, .gl-dark .hljs-tag,
+  .gl-dark .hljs-name, .gl-dark .hljs-symbol, .gl-dark .hljs-addition {
+    color: #00ac3a !important;
+  }
+
+  .gl-dark .code .nf, .gl-dark .code .fm, .gl-dark .code .nc, .gl-dark .code .kt,
+  .gl-dark .code .nd, .gl-dark .code .na, .gl-dark .code .nn, .gl-dark .code .ne,
+  .gl-dark .highlight .nf, .gl-dark .highlight .nc, .gl-dark .highlight .kt,
+  .gl-dark .highlight .na,
+  .gl-dark .hljs-title, .gl-dark .hljs-function, .gl-dark .hljs-type,
+  .gl-dark .hljs-class, .gl-dark .hljs-attr, .gl-dark .hljs-built_in,
+  .gl-dark .hljs-section {
+    color: #c472fb !important;
+    font-weight: normal !important;
+  }
+
+  .gl-dark .code .m, .gl-dark .code .mb, .gl-dark .code .mf, .gl-dark .code .mh,
+  .gl-dark .code .mi, .gl-dark .code .il, .gl-dark .code .mo, .gl-dark .code .mx,
+  .gl-dark .code .no, .gl-dark .code .nb, .gl-dark .code .bp, .gl-dark .code .vc,
+  .gl-dark .code .vg, .gl-dark .code .vi, .gl-dark .code .py, .gl-dark .code .nl,
+  .gl-dark .highlight .m, .gl-dark .highlight .mi, .gl-dark .highlight .no,
+  .gl-dark .highlight .nb,
+  .gl-dark .hljs-number, .gl-dark .hljs-literal, .gl-dark .hljs-variable,
+  .gl-dark .hljs-template-variable, .gl-dark .hljs-property,
+  .gl-dark .hljs-attribute, .gl-dark .hljs-link, .gl-dark .hljs-params {
+    color: #52a8ff !important;
+  }
+
+  .gl-dark .code .n, .gl-dark .code .nx, .gl-dark .code .nv, .gl-dark .code .p,
+  .gl-dark .code .w, .gl-dark .code .err,
+  .gl-dark .highlight .n, .gl-dark .highlight .p, .gl-dark .highlight .nv,
+  .gl-dark .hljs-punctuation, .gl-dark .hljs-subst {
+    color: #ededed !important;
+    background: none !important;
+  }
+
+  .gl-dark .code .gd, .gl-dark .hljs-deletion { color: #f32e40 !important; }
+  .gl-dark .code .gi { color: #00ac3a !important; }
+  .gl-dark .code .gh, .gl-dark .code .gu { color: #52a8ff !important; }
+  .gl-dark .code .ge, .gl-dark .hljs-emphasis { font-style: italic; }
+  .gl-dark .code .gs, .gl-dark .hljs-strong { font-weight: 700; }
+
+  .gl-dark .build-log,
+  .gl-dark .job-log,
+  .gl-dark .job-log-line,
+  .gl-dark pre.build-trace {
+    background-color: var(--vd-surface) !important;
+    color: var(--vd-text) !important;
+  }
+
+  .gl-dark .term-fg-black { color: #000000; }
+  .gl-dark .term-fg-red { color: #f32e40; }
+  .gl-dark .term-fg-green { color: #00ac3a; }
+  .gl-dark .term-fg-yellow { color: #ffae00; }
+  .gl-dark .term-fg-blue { color: #52a8ff; }
+  .gl-dark .term-fg-magenta { color: #9440d5; }
+  .gl-dark .term-fg-cyan { color: #00aa95; }
+  .gl-dark .term-fg-white { color: #a0a0a0; }
+  .gl-dark .term-fg-l-black { color: #676767; }
+  .gl-dark .term-fg-l-red { color: #f32e40; }
+  .gl-dark .term-fg-l-green { color: #00ac3a; }
+  .gl-dark .term-fg-l-yellow { color: #ffae00; }
+  .gl-dark .term-fg-l-blue { color: #52a8ff; }
+  .gl-dark .term-fg-l-magenta { color: #9440d5; }
+  .gl-dark .term-fg-l-cyan { color: #00aa95; }
+  .gl-dark .term-fg-l-white { color: #ededed; }
+}
